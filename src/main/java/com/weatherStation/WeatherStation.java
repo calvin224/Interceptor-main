@@ -1,6 +1,7 @@
 package com.weatherStation;
 
 import com.weatherStation.Interceptor.HumidityInterceptor;
+import com.weatherStation.Interceptor.PressureInterceptor;
 import com.weatherStation.Interceptor.TemperatureInterceptor;
 
 import java.util.*;
@@ -15,7 +16,8 @@ public class WeatherStation {
 		HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 		TemperatureInterceptor temperatureInterceptor = new TemperatureInterceptor();
 		HumidityInterceptor humidityInterceptor = new HumidityInterceptor();
-
+		PressureInterceptor pressureInterceptor = new PressureInterceptor();
+		weatherData.addInterceptor(pressureInterceptor);
 		weatherData.addInterceptor(temperatureInterceptor);
 		weatherData.addInterceptor(humidityInterceptor);
 
